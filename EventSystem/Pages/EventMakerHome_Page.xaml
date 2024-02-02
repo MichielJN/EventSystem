@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventSystem.EventMakerHome_Page"
+             Title="EventMakerHome_Page"
+             BackgroundColor="#D5D1CA">
+    <VerticalStackLayout
+        Padding="30,0"
+Spacing="25">
+
+        <Label Text="Evenementmaker home"
+                   TextColor="#E81B33"
+                   BackgroundColor="Transparent"
+                   FontSize="18"
+                  FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+        
+        <Button Text="Terug"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                x:Name="Back_Button"
+                Clicked="BackButton_Pressed"
+                Margin="5,5,5,5"/>
+        <Label 
+            Text="Evenementmaker home"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button Text="Maak evenement"
+        x:Name="MakeHappening_Button"
+        Clicked="MakeHappeningButton_Pressed"
+                Margin="5,5,5,5"/>
+        <ScrollView>
+            <!--<CollectionView
+            x:Name="Happening_Collection">
+            
+            <CollectionView.ItemTemplate>
+               
+                    <DataTemplate>
+                        <Border 
+                            StrokeThickness="3" Visual=""
+                            >
+                        <Grid>
+
+                    <Grid.ColumnDefinitions>
+                                
+                                    <ColumnDefinition Width="10*"  />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="10*" />
+                         <ColumnDefinition Width="10*" />
+                         <ColumnDefinition Width="10*" />
+                            </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            --><!--<Label Grid.Column="0" Grid.Row="0" Text="Selecteer evenement"></Label>
+                            <Label Grid.Column="1" Grid.Row="0" Text="Datum"></Label>--><!--
+
+                            <Label Grid.Column="0" Grid.Row="0" Text="Datum:" />
+                            <Label Grid.Column="1" Grid.Row ="0" Text="{Binding Date, StringFormat=\{0:d\}}"/>
+                            <Label Grid.Column="0" Grid.Row="1" Text="Start:"/>
+                            <Label Grid.Column="1" Grid.Row="1" Text="{Binding StartTime}"/>
+                            <Label Grid.Column="0" Grid.Row="2" Text="Eind:"/>
+                            <Label Grid.Column="1" Grid.Row="2" Text="{Binding EndTime}"/>
+                            <Label Grid.Column="0" Grid.Row="3" Text="naam evenement" />
+                            <Button Grid.Column="1" Grid.Row="3"
+        Text="{Binding Name}"
+        x:Name="SelectHappening_Button"
+        Clicked="SelectHappeningButtonPressed"
+        Margin="5,5,5,5"
+        
+        />
+
+                        </Grid>
+                            </Border >
+                    </DataTemplate>
+        </CollectionView.ItemTemplate>
+        </CollectionView>-->
+            <CarouselView x:Name="Happening_Collection">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                        
+                       HeightRequest="250"
+                                   WidthRequest="1000"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Button
+                                     Text="{Binding Name}"
+                                     x:Name="SelectHappening_Button"
+                                     Clicked="SelectHappeningButtonPressed"
+                                      Margin="5,5,5,5"
+                                        />
+                                    <Label
+                                        Text="{Binding Date, StringFormat=Datum: \{0:d\}}"
+                                        />
+                                    <Label
+                               Text="{Binding StartTime, StringFormat=Starttijd: \{0:t\}}"
+                                      />
+
+                                    <Label
+                                    Text="{Binding EndTime, StringFormat=Eindtijd: \{0:t\}}"
+                                          />
+
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+
+
+        </ScrollView>
+
+
+    </VerticalStackLayout>
+</ContentPage>

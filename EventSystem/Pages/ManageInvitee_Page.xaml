@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventSystem.Pages.ManageInvitee_Page"
+             Title="ManageInvitee_Page">
+    <VerticalStackLayout
+                Padding="30,0"
+                 Spacing="25">
+        <Label Text="Beheer genodigde"
+                   TextColor="#E81B33"
+                   BackgroundColor="Transparent"
+                   FontSize="18"
+                  FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+
+        <Button Text="Terug"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                x:Name="Back_Button"
+                Clicked="BackButton_Pressed"
+                Margin="5,5,5,5"/>
+
+        <Label Text="Zet genodigde als niet of wel in evenement" />
+        <Switch  IsToggled="false" x:Name="IsInHappening_Switch" Toggled="IsInHappening_Toggled" />
+        <Label Text="" x:Name="Name_Label"/>
+        <Label Text="" x:Name="Email_Label"/>
+        <Entry Placeholder="Wijzig Naam" x:Name="EditName_Label" />
+        <Entry Placeholder="Wijzig Email" x:Name="EditEmail_Label" />
+        <Button x:Name="EditNameOrEmailButton" Text="Wijzig naam en/of e-mail"/>
+
+    </VerticalStackLayout>
+</ContentPage>

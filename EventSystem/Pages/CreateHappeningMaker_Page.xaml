@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventSystem.Pages.CreateHappeningMaker_Page"
+             Title="CreateHappeningMaker_Page"
+             BackgroundColor="#D5D1CA">
+    <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+        <Label Text="Maak evenementmaker account"
+                   TextColor="#E81B33"
+                   BackgroundColor="Transparent"
+                   FontSize="18"
+                  FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+
+        <Button Text="Terug"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                x:Name="Back_Button"
+                Clicked="BackButton_Pressed"
+                Margin="5,5,5,5"/>
+
+        <Entry Placeholder="Evenementmaker naam"
+                   x:Name="HappeningMakerName_Entry"/>
+
+        <Entry Placeholder="Email"
+                   x:Name="Email_entry"/>
+
+
+        <Entry Placeholder="Wachtwoord"
+                   IsPassword="True"
+                   x:Name="HappeningMakerPassword_Entry"/>
+
+        <Entry Placeholder="Wachtwoord bevestigen"
+                   IsPassword="True"
+                   x:Name="ConfirmHappeningMakerPassword_Entry"/>
+
+
+
+
+        <Button Text="Maak Evenementmaker account" 
+                    x:Name="CreateHappeningMaker_Button"
+                    Clicked="CreateHappeningMaker_Pressed"
+                Margin="5,5,5,5"/>
+
+    </VerticalStackLayout>
+</ContentPage>

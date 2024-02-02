@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventSystem.Pages.CreateEvent_Page"
+             Title="CreateEvent_Page"
+             BackgroundColor="#D5D1CA"
+             >
+   
+        <VerticalStackLayout
+            Padding="30,0"
+Spacing="25">
+        <Label Text="Maak evenement"
+                   TextColor="#E81B33"
+                   BackgroundColor="Transparent"
+                   FontSize="18"
+                  FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+        <Button Text="Terug"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                x:Name="Back_Button"
+                Clicked="BackButton_Pressed"/>
+
+        <Label 
+            Text="Maak evenement"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" />
+
+        <Entry Placeholder="Typ evenementnaam"
+               x:Name="HappeningName_Entry"
+               />
+
+
+        <DatePicker 
+            x:Name="Happening_DatePicker"
+              />
+
+        <TimePicker 
+            x:Name="Begin_TimePicker"
+            
+            
+            
+            />
+        <TimePicker 
+            x:Name="End_TimePicker"
+            
+            BindingContext="Begin_TimePicker"
+            
+            />
+
+
+        <Button Text="Maak Evenement"
+                x:Name="MakeHappening_Button"
+                Clicked="MakeHappeningButton_Pressed"/>
+        
+    </VerticalStackLayout>
+</ContentPage>

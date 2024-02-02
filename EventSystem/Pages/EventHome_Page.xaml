@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventSystem.Pages.EventHome_Page"
+             Title="EventHome_Page"
+             BackgroundColor="#D5D1CA">
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+
+        <Label Text="Evenement home"
+                   TextColor="#E81B33"
+                   BackgroundColor="Transparent"
+                   FontSize="18"
+                  FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+
+        <Button Text="Terug"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                x:Name="Back_Button"
+                Clicked="BackButton_Pressed"/>
+
+
+        <Label Text="Mensen niet in evenement" FontAttributes="Bold" FontSize="16"/>
+        <ScrollView
+            >
+
+
+
+            <CollectionView
+            x:Name="InviteesInEvent_Grid">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate >
+                        <Border
+                         Margin="5,5,5,5"
+                            BackgroundColor="Black"
+                            >
+                            <Grid>
+                                <Grid.Resources>
+                                    <CornerRadius x:Key="InviteesInEvent_Radius">
+                                        50
+                                    </CornerRadius>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"  />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+
+                                </Grid.RowDefinitions>
+
+
+
+                                <Label Text="Email:" Grid.Row="0"  Grid.Column="0"/>
+                                <Label Text="Beheer: " Grid.Row="0"  Grid.Column="1"/>
+                                <Label Text="{Binding Email}" Grid.Row="1"  Grid.Column="0"/>
+                                <Button Text="{Binding Name}" Grid.Row="1" Grid.Column="1" Clicked="ManageInviteeButton_Pressed" Margin="5,5,5,5" />
+
+
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+        <Label Text="Mensen in evenement" FontAttributes="Bold" FontSize="16"/>
+        <ScrollView
+            >
+
+
+            
+            <CollectionView
+            x:Name="InviteesNotInEvent_Grid">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+                        <Border
+                          Margin="5,5,5,5"
+                            BackgroundColor="Black"
+                            >
+                            <Grid>
+                                <Grid.Resources
+                                    >
+                                    <CornerRadius x:Key="InviteesNotInEvent_Radius">
+                                        50
+                                    </CornerRadius>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"  />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                
+                            </Grid.RowDefinitions>
+
+
+
+                            <Label Text="Email:" Grid.Row="0"  Grid.Column="0"/>
+                            <Label Text="Beheer genodigde:" Grid.Row="0"  Grid.Column="1"/>
+                            <Label Text="{Binding Email}" Grid.Row="1"  Grid.Column="0"/>
+                            <Button Text="{Binding Name}" Grid.Row="1" Grid.Column="1" Clicked="ManageInviteeButton_Pressed" Margin="5,5,5,5"/>
+
+
+                        </Grid>
+                            </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+        <Label 
+            Text="Nodig mensen uit"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" />
+
+        <Entry Placeholder="Naam genodigde"
+               x:Name="InviteeName_Entry"
+               />
+
+        <Entry Placeholder="Email genodigde"
+               x:Name="InviteeEmail_Entry"
+               />
+
+
+        <Button Text="Stuur uitnodiging"
+                x:Name="CreateInvitee_Button"
+                Clicked="CreateInviteeButton_Pressed"
+                Margin="5,5,5,5"/>
+
+        <Button Text="Lees qr code uitnodiging"
+         x:Name="ReadQR_Button"
+         Clicked="ReadQRButton_Pressed"
+                Margin="5,5,5,5"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>

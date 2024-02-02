@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventSystem.MainPage"
+             BackgroundColor="#D5D1CA"
+             >
+
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="Log in"
+                   TextColor="#E81B33"
+                   BackgroundColor="Transparent"
+                   FontSize="18"
+                  FontAttributes="Bold" 
+                   HorizontalOptions="Center"/>
+
+            <Entry Placeholder="Typ hier je E-mail"
+                   x:Name="HappeningMakerEmail_Entry"/>
+
+            <Entry Placeholder="Wachtwoord"
+                   IsPassword="True"
+                   x:Name="HappeningMakerPassword_Entry"/>
+
+            <Button Text="Log in" 
+                    x:Name="LogEventMakerIn_Button"
+                    Clicked="LogEventMakerIn_Pressed"/>
+
+            <Button Text="Maak Evenementmaker account" 
+                    x:Name="CreateHappeningMaker_Button"
+                    Clicked="CreateHappeningMaker_Pressed"/>
+
+
+            <Button Text="Show list" 
+                    x:Name="ShowList"
+                    Clicked="Showlist_pressed"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
