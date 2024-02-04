@@ -63,7 +63,7 @@ public partial class EventHome_Page : ContentPage
 
 				//qr code deleten na versturen email
 				//  File.Delete(Path.Combine(FileSystem.AppDataDirectory, "QRInvitee.png"));
-				Application.Current.MainPage.Navigation.PushModalAsync(new EventHome_Page(App.HappeningRepo.GetEntityWithChildren(this.happening.Id)));
+				await Application.Current.MainPage.Navigation.PushModalAsync(new EventHome_Page(App.HappeningRepo.GetEntityWithChildren(this.happening.Id)));
 			}
 			else
 			{

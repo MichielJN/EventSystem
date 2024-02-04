@@ -1,6 +1,11 @@
 ﻿using EventSystem.Pages;
 using EventSystem.Data;
 using EventSystem.Models;
+using EventSystem.Logic;
+using Newtonsoft;
+using System.Text.Json;
+using Newtonsoft.Json.Linq;
+
 
 namespace EventSystem
 {
@@ -21,9 +26,13 @@ namespace EventSystem
 
         public async void Showlist_pressed(object sender, EventArgs e)
         {
-            List<HappeningMaker> happeningMakers  = App.HappeningMakerRepo.GetEntitiesWithChildren();
-            HappeningMaker happeningMaker = happeningMakers[0];
+            //ShowList.Text = await EventSystem.Logic.JokeLogic.GetRandomJoke();
+            var joke = JObject.Parse(await EventSystem.Logic.JokeLogic.GetRandomJoke());
+            var showJoke = (string)joke["attachments"][0]["text"];
+            ShowList.Text = showJoke + " ...........Klik voor een andere grap";
+           
             
+
         }
 
         private async void LogEventMakerIn_Pressed(object sender, EventArgs e)
