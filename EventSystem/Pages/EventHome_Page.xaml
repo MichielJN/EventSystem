@@ -144,6 +144,11 @@
                 Clicked="CreateInviteeButton_Pressed"
                 Margin="5,5,5,5"/>
 
+        <Button Text="Laat mensen zichzelf uitnodigen(Waarchuwing: als je terug wilt moet je de app opnieuw opstarten.)"
+         x:Name="SelfInvite_Button"
+         Clicked="SelfInviteButton_Pressed"
+         Margin="5,5,5,5"/>
+
         <Button Text="Lees qr code uitnodiging"
          x:Name="ReadQR_Button"
          Clicked="ReadQRButton_Pressed"

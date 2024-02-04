@@ -72,4 +72,8 @@ public partial class EventHome_Page : ContentPage
 			}
 		}
 	}
+    public async void SelfInviteButton_Pressed(object sender, EventArgs e)
+	{
+		await Application.Current.MainPage.Navigation.PushModalAsync(new SelfInvite_Page(App.HappeningRepo.GetEntityWithChildren(this.happening.Id)));
+	}
 }

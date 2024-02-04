@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventSystem.Pages.SelfInvite_Page"
+             Title="SelfInvite_Page">
+    <VerticalStackLayout
+        Padding="30,0"
+ Spacing="25">
+        <Entry Placeholder="Typ hier je naam"
+           x:Name="InviteeName_Entry"
+           />
+
+        <Entry Placeholder="Typ hier je e-mail"
+           x:Name="InviteeEmail_Entry"
+           />
+
+
+        <Button Text="Stuur uitnodiging"
+            x:Name="CreateInvitee_Button"
+            Clicked="CreateInviteeButton_Pressed"
+            Margin="5,5,5,5"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>
