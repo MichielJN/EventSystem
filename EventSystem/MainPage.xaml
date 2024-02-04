@@ -33,7 +33,7 @@
                     Clicked="CreateHappeningMaker_Pressed"/>
 
 
-            <Button Text="Show list" 
+            <Button Text="Klik voor een grap" 
                     x:Name="ShowList"
                     Clicked="Showlist_pressed"/>
 

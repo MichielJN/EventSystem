@@ -63,7 +63,7 @@ public partial class EventHome_Page : ContentPage
 
 				//qr code deleten na versturen email
 				//  File.Delete(Path.Combine(FileSystem.AppDataDirectory, "QRInvitee.png"));
-				Application.Current.MainPage.Navigation.PushModalAsync(new EventHome_Page(App.HappeningRepo.GetEntityWithChildren(this.happening.Id)));
+				await Application.Current.MainPage.Navigation.PushModalAsync(new EventHome_Page(App.HappeningRepo.GetEntityWithChildren(this.happening.Id)));
 			}
 			else
 			{
@@ -71,5 +71,9 @@ public partial class EventHome_Page : ContentPage
 				InviteeEmail_Entry.Placeholder = "Er is al een gast met deze email uitgenodigd.";
 			}
 		}
+	}
+    public async void SelfInviteButton_Pressed(object sender, EventArgs e)
+	{
+		await Application.Current.MainPage.Navigation.PushModalAsync(new SelfInvite_Page(App.HappeningRepo.GetEntityWithChildren(this.happening.Id)));
 	}
 }

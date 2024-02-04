@@ -92,7 +92,7 @@ Spacing="25">
                        Margin="20"
                         
                        HeightRequest="250"
-                                   WidthRequest="1000"
+                                   WidthRequest="300"
                        HorizontalOptions="Center"
                        VerticalOptions="CenterAndExpand">
                                 <StackLayout>
